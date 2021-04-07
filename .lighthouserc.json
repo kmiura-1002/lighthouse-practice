@@ -1,0 +1,25 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "startServerCommand": "yarn start",
+      "url": [
+        "http://localhost:3000/",
+        "http://localhost:3000/about",
+        "http://localhost:3000/users"
+      ]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "dom-size": ["error", {"maxNumericValue": 3000}],
+        "offscreen-images": "off",
+        "color-contrast": "off",
+        "tap-targets": "off"
+      }
+    },
+    "upload": {
+      "target": "filesystem"
+    }
+  }
+}
